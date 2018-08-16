@@ -1,22 +1,21 @@
 'use strict';
 
 const fs = require('fs');
-const cmdNames = fs.readdirSync('./lib/commands');
+const path = require('path');
 
-
-
-// function dealCommands(commands) {
-
-// }
+const Variable = require('./lib/variable');
+const requireCommands = require('./lib/require_commands');
 
 function done(data = {}, commands, defined) {
-    const {
-        query,
-        body,
-        headers
-    };
+    // const {
+    //     query,
+    //     body,
+    //     headers
+    // } = data;
+
+    const variable = new Variable(data);
 
     
 };
 
-done({})
+exports.done = done;
