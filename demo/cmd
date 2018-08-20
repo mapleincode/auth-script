@@ -1,3 +1,8 @@
 set nihao [hget $body nihao]
 set mmm [md5 $nihao]
 hset $header sign $mmm
+set result {}
+hset $result body $body
+hset $result header $header
+hset $result query $query
+get $result
