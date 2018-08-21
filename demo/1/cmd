@@ -3,6 +3,9 @@ set mmm [md5 $nihao]
 hset $header sign $mmm
 set result {}
 hset $result body $body
-hset $result header $header
+hset $result headers $headers
 hset $result query $query
+hset $body time [timestamp]
+printf $headers
+hset $body headers [keys $headers]
 get $result

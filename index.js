@@ -10,7 +10,7 @@ class AutoSign {
 
     init(commands) {
         const cmds = commands.split('\n').map(cmd => cmd.trim()).filter(cmd => !!cmd);
-        const realCmds = cmds.map(cmd => new CMD(cmd));
+        const realCmds = cmds.map(cmd => new CMD(cmd)).filter(cmd => cmd.status);
         return realCmds;
     }
 
