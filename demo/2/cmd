@@ -1,0 +1,7 @@
+set allbody [ assign $body $query $params ]
+set keys [listsort [keys $allbody]]
+set str [listjoin [ listbykeys $keys $allbody = ] &]
+set base64str [base64 $str]
+set signstr [join $appSecret $base64str]
+set sign [sha1sign $privateKey $signstr]
+printf $sign
